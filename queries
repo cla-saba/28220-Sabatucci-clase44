@@ -1,0 +1,36 @@
+// Se listan todos los usuarios y se muestra el id y nombre
+query {
+  getUsers{
+    id
+    name
+  }
+}
+
+// Se lista usuario con id "1" y se muestra el id, nombre y nombre de categoria
+query {
+  findUser(id: "48") {
+    id
+    name
+  }
+}
+
+// Se modifica Commander Rick por Alter Commander Rick y muestra el id y el nombre nuevo
+mutation {
+  updateUser(data: {
+    id: "69",
+    name:"Alter Commander Rick"}) {
+      results {
+        id
+        name
+      }
+ }
+}
+
+// Se elimina Alien Rick y muestra el nombre del usuario eliminado
+mutation {
+  deleteUser(data: {
+    id: "15"
+    }) {
+    name
+  }
+}
